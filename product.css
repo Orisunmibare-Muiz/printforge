@@ -4,8 +4,7 @@
     box-sizing: border-box;
 }
 body {
-    display: flex;
-    flex-direction: column;
+    background-color: white;
 }
 nav {
     display: flex;
@@ -13,22 +12,19 @@ nav {
     justify-content: space-between;
     padding: 6px 40px;
     align-items: center;
-    position: fixed;
-    width: 100%;
-    z-index: 2;
-    background-color: white;
-    margin-bottom: 10px;
 }
-nav img {
+nav .loggo {
     width: 240px;
     height: 51px;
+}
+nav .mobile-logo {
+    display: none;
 }
 nav ul {
     list-style: none;
     display: flex;
     flex-direction: row;
     gap: 40px;
-    
 }
 nav ul li a {
     font-family: Albert Sans;
@@ -43,6 +39,11 @@ nav ul li a:hover {
     color: #F77429;
     padding-bottom: 5px;
     transition: all 0.5s ease;
+}
+nav ul li a:hover {
+    border-bottom: 2px solid #F77429;
+    color: #F77429;
+    padding-bottom: 5px;
 }
 .model-side-bar {
     margin-left: 30px;
@@ -73,7 +74,6 @@ nav ul li a:hover {
     left: 260px;
 }
 .product-detail {
-    /* border: 1px solid black; */
     height: 450px;
     width: 300px;
     position: absolute;
@@ -120,4 +120,72 @@ nav ul li a:hover {
 .pdt-dtl-two {
     font-family: Albert Sans;
     font-size: 13px;
+}
+
+@media (max-width: 480px) {
+    nav {
+    padding: 0px;
+    padding: 10px 5px;
+    position: fixed;
+    width: 100vw;
+    z-index: 1000;
+    background-color: white;
+    }
+    nav .loggo {
+        display: none;
+    }
+    nav .mobile-logo {
+        display: flex;
+    }
+    nav .mobile-logo img {
+        width: 40px;
+    }
+    .model-side-bar {
+        margin-left: 0px;
+        padding: 0px 10px;
+        position: fixed;
+        top: 57px;
+        overflow-x: scroll;
+        width: 100vw;
+    }
+    .model-main-bar {
+        margin-left: 19px;
+        position: absolute;
+        top: 150px;
+    }
+    .side-one {
+        width: 90vw;
+
+        .hero{
+            height: 400px;
+        }
+    }
+    .model-side-bar ul {
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+        white-space: nowrap;
+        overflow-x: scroll;
+        scroll-behavior: smooth;
+    }
+    .product-image {
+        width: 320px;
+        top: 150px;
+        left: 20px;
+    }
+    .product-detail {
+        top: 380px;
+        left: 20px;
+    }
+    .text-one  {
+        font-size: 25px;
+    }
+    .float-me {
+        width: 25px;
+    }
+    .text-two {
+        margin-bottom: 70px;
+    }
+    .back {
+    }
 }
